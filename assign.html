@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            z-index: 1000;
+        }
+        .container {
+            display: flex;
+            margin-top: 60px;
+            height: calc(100vh - 100px);
+        }
+        .left-menu {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 1em;
+        }
+        .main-content {
+            flex: 1;
+            background: #eaeaea;
+            padding: 1em;
+        }
+        .right-panel {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 1em;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .collapsible {
+            cursor: pointer;
+            text-align: center;
+            background: #ddd;
+            padding: 1em;
+        }
+        .collapsible-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Fixed Navbar</div>
+    <div class="container">
+        <div class="left-menu">
+            <div class="collapsible">Menu</div>
+            <div class="collapsible-content">Collapsible Menu Content</div>
+        </div>
+        <div class="main-content">Main Content</div>
+        <div class="right-panel">Right Panel</div>
+    </div>
+    <div class="footer">Footer</div>
+    <script>
+        document.querySelector('.collapsible').addEventListener('click', () => {
+            const content = document.querySelector('.collapsible-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
